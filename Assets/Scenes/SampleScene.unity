@@ -1961,7 +1961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &417260439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2001,7 +2001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &417376099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2587,7 +2587,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 474098683}
   m_Template: {fileID: 685973742}
   m_CaptionText: {fileID: 745778264}
@@ -2915,7 +2915,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.8627451}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2933,11 +2933,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 551770166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2061961624}
+        m_TargetAssemblyTypeName: ScreemManager, Assembly-CSharp
+        m_MethodName: SettingsScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &551770166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7687,7 +7699,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1439556690}
   m_Template: {fileID: 711368784}
   m_CaptionText: {fileID: 750228659}
@@ -9148,6 +9160,8 @@ GameObject:
   - component: {fileID: 2061961620}
   - component: {fileID: 2061961624}
   - component: {fileID: 2061961625}
+  - component: {fileID: 2061961626}
+  - component: {fileID: 2061961627}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9257,6 +9271,7 @@ MonoBehaviour:
   mainScreem: {fileID: 417376098}
   timeScreem: {fileID: 432407916}
   logsScreen: {fileID: 1439411414}
+  settingsScreen: {fileID: 417260438}
 --- !u!114 &2061961625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9270,6 +9285,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildVersion: {fileID: 2007302789}
+--- !u!114 &2061961626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061961619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6008196f452f4e84a8c86cb36cd39149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 861063090}
+--- !u!114 &2061961627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061961619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0ce50765061164abb8c58b5ce530b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2066569347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,9 +9556,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2083750591}
-        m_TargetAssemblyTypeName: Task, Assembly-CSharp
-        m_MethodName: TaskChange
+      - m_Target: {fileID: 2061961627}
+        m_TargetAssemblyTypeName: SettingsFunctions, Assembly-CSharp
+        m_MethodName: ChangeBackgorund
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
