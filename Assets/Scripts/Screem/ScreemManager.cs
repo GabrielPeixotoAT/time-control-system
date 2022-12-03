@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScreemManager : MonoBehaviour
 {
-    public GameObject mainScreem, timeScreem;
+    public GameObject mainScreem, timeScreem, logsScreen;
 
     void Start()
     {
@@ -15,11 +15,18 @@ public class ScreemManager : MonoBehaviour
     {
         mainScreem.SetActive(true);
         timeScreem.SetActive(false);
+        logsScreen.SetActive(false);
     }
 
     public void TimeScreem()
     {
         timeScreem.SetActive(true);
+        mainScreem.SetActive(false);
+    }
+
+    public void LogsScreen()
+    {
+        logsScreen.SetActive(true);
         mainScreem.SetActive(false);
     }
 

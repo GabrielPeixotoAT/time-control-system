@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "J1AXB60112248VG",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 27758,
+        "processId": 28376,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,12 @@
             "deviceId": "J1AXB60112248VG",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 27758,
+            "exited": false
+        },
+        {
+            "deviceId": "J1AXB60112248VG",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 28376,
             "exited": false
         }
     ],
