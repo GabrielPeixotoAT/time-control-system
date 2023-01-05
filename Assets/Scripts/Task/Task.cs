@@ -5,36 +5,29 @@ using TMPro;
 
 public class Task : MonoBehaviour
 {
-    public TMP_Text taskClock;
+    public TMP_Text TaskClock;
 
-    string Studing = "00:00:00", Working = "00:00:00", Playing = "00:00:00", Nothing = "00:00:00";
-
-    States states;
+    string studing = "00:00:00", working = "00:00:00", playing = "00:00:00", nothing = "00:00:00";
 
     float taskTime, refTime;
     int currentTask = 3;
 
     void Start()
     {
-        states = new States();
+        string[] logs = new string[3];
+
+        logs = SaveSystem.LoadLogs();
+
+        working = logs[0];
+        studing = logs[1];
+        playing = logs[2];
     }
 
     void Update()
     {
-        switch (currentTask)
+        if (currentTask != 3)
         {
-            case 0:
-                TimeIncremet();
-                break;
-            case 1:
-                TimeIncremet();
-                break;
-            case 2:
-                TimeIncremet();
-                break;
-            case 3:
-                
-                break;
+            TimeIncremet();
         }
     }
 
@@ -42,20 +35,9 @@ public class Task : MonoBehaviour
     {
         SetStateTime();
 
-        if (SaveSystem.logs == null)
-        {
-            List<Days> days = new List<Days>();
+        SaveSystem.SetStates(working, studing, playing);
 
-            days.Add(CreteDay());
-
-            SaveSystem.logs = new Logs(days);
-        }
-        else
-        {
-            SaveSystem.logs.AddDay(Studing, Working, Playing, Nothing);
-        }
-
-        SaveSystem.SaveData();
+        SaveSystem.SaveLogs();
         
         ResetTime();
         currentTask = index;
@@ -67,16 +49,16 @@ public class Task : MonoBehaviour
         switch (currentTask)
         {
             case 0:
-                Studing = taskClock.text;
+                studing = TaskClock.text;
                 break;
             case 1:
-                Working = taskClock.text;
+                working = TaskClock.text;
                 break;
             case 2:
-                Playing = taskClock.text;
+                playing = TaskClock.text;
                 break;
             case 3:
-                Nothing = taskClock.text;
+                nothing = TaskClock.text;
                 break;
         }
     }
@@ -84,11 +66,11 @@ public class Task : MonoBehaviour
     void ResetTime()
     {
         taskTime = 0;
-        taskClock.text = "00:00:00";
-        Studing = "00:00:00";
-        Working = "00:00:00";
-        Playing = "00:00:00";
-        Nothing = "00:00:00";
+        TaskClock.text = "00:00:00";
+        studing = "00:00:00";
+        working = "00:00:00";
+        playing = "00:00:00";
+        nothing = "00:00:00";
     }
 
     void TimeIncremet()
@@ -97,12 +79,7 @@ public class Task : MonoBehaviour
         {
             refTime++;
             taskTime++;
-            taskClock.text = TimeSpan.FromSeconds(taskTime).ToString();
+            TaskClock.text = TimeSpan.FromSeconds(taskTime).ToString();
         }
-    }
-
-    Days CreteDay()
-    {
-        return new Days(DateTime.Now.ToString("dd/MM/yyyy"), states);
     }
 }

@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2547,7 +2547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130123e831aeb2849aa588c5d09525f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskClock: {fileID: 818726414}
+  TaskClock: {fileID: 0}
 --- !u!114 &474098682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3064,8 +3064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listItem: {fileID: 4128757971915108148, guid: 86ccd6eb82a785042ad820e5777de489, type: 3}
   settings: {fileID: 2061961626}
-  logs:
-    DaysList: []
+  logs: []
 --- !u!1 &558481881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,7 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130123e831aeb2849aa588c5d09525f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskClock: {fileID: 818726414}
+  TaskClock: {fileID: 818726414}
 --- !u!1 &861063088
 GameObject:
   m_ObjectHideFlags: 0
@@ -7660,7 +7659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130123e831aeb2849aa588c5d09525f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskClock: {fileID: 818726414}
+  TaskClock: {fileID: 0}
 --- !u!114 &1439556689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9530,7 +9529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130123e831aeb2849aa588c5d09525f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskClock: {fileID: 818726414}
+  TaskClock: {fileID: 0}
 --- !u!114 &2083750592
 MonoBehaviour:
   m_ObjectHideFlags: 0

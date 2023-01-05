@@ -8,41 +8,31 @@ public class ListLogs : MonoBehaviour
     public GameObject listItem;
     public ScreenSettings settings;
 
-    public Logs logs;
-
-    Days currentDay;
+    public string[] logs;
 
     void OnEnable()
     {
-        logs = SaveSystem.LoadData();
+        logs = SaveSystem.LoadLogs();
 
-        if (logs != null)
-        {
-            currentDay = logs.FindLastDay();
-        }
+        GameObject listIntemCopy = Instantiate(listItem, gameObject.transform);
+        listIntemCopy.GetComponent<ListItem>().message = "Studing";
+        listIntemCopy.GetComponent<ListItem>().time = logs[1];
+        listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
 
-        if (currentDay != null)
-        {
-            GameObject listIntemCopy = Instantiate(listItem, gameObject.transform);
-            listIntemCopy.GetComponent<ListItem>().message = "Studing";
-            listIntemCopy.GetComponent<ListItem>().time = currentDay.StateList.Studing;
-            listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
+        listIntemCopy = Instantiate(listItem, gameObject.transform);
+        listIntemCopy.GetComponent<ListItem>().message = "Working";
+        listIntemCopy.GetComponent<ListItem>().time = logs[0];
+        listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
 
-            listIntemCopy = Instantiate(listItem, gameObject.transform);
-            listIntemCopy.GetComponent<ListItem>().message = "Working";
-            listIntemCopy.GetComponent<ListItem>().time = currentDay.StateList.Working;
-            listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
+        listIntemCopy = Instantiate(listItem, gameObject.transform);
+        listIntemCopy.GetComponent<ListItem>().message = "Playing";
+        listIntemCopy.GetComponent<ListItem>().time = logs[2];
+        listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
 
-            listIntemCopy = Instantiate(listItem, gameObject.transform);
-            listIntemCopy.GetComponent<ListItem>().message = "Playing";
-            listIntemCopy.GetComponent<ListItem>().time = currentDay.StateList.Playing;
-            listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
-
-            listIntemCopy = Instantiate(listItem, gameObject.transform);
-            listIntemCopy.GetComponent<ListItem>().message = "Nothing";
-            listIntemCopy.GetComponent<ListItem>().time = currentDay.StateList.Nothing;
-            listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
-        }
+        listIntemCopy = Instantiate(listItem, gameObject.transform);
+        listIntemCopy.GetComponent<ListItem>().message = "Nothing";
+        listIntemCopy.GetComponent<ListItem>().time = "00:00:00";
+        listIntemCopy.GetComponent<TMP_Text>().color = settings.fontColor;
     }
 
     void OnDisable()
