@@ -17,10 +17,6 @@ public static class SaveSystem
         states.Studing = (states.Studing != "00:00:00") ? IncreseTime(states.Studing, studing) : studing;
 
         states.Playing = (states.Playing != "00:00:00") ? IncreseTime(states.Playing, playing) : playing;
-        
-        Debug.Log(working);
-
-        Debug.LogWarning("SET!");
     }
 
     public static void SaveLogs()
@@ -28,19 +24,15 @@ public static class SaveSystem
         PlayerPrefs.SetString("Working", states.Working);
         PlayerPrefs.SetString("Studing", states.Studing);
         PlayerPrefs.SetString("Playing", states.Playing);
-
-        Debug.LogWarning("SAVE!");
     }
 
     public static string[] LoadLogs()
     {
-        states.Working = PlayerPrefs.GetString("Working", "00:00:00");
-        states.Studing = PlayerPrefs.GetString("Studing", "00:00:00");
-        states.Playing = PlayerPrefs.GetString("Playing", "00:00:00");
+        string working = PlayerPrefs.GetString("Working", "00:00:00");
+        string studing = PlayerPrefs.GetString("Studing", "00:00:00");
+        string playing = PlayerPrefs.GetString("Playing", "00:00:00");
 
-        Debug.LogWarning("LOAD!");
-
-        return new string[] { states.Working, states.Studing, states.Playing };
+        return new string[] { working, studing, playing };
     }
 
     private static string IncreseTime(string timeOne, string timeTwo)
